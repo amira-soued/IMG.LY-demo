@@ -26,9 +26,11 @@ struct DashboardView: View {
                     noScenesView
                 } else {
                     // list of saved created scenes
-    //                List(savedSceneNames) { scene in
-    //
-    //                }
+                   List(savedSceneNames) { scene in
+                    NavigationLink(destination: EditorView(item: scene)) {
+                        Text(scene.name)
+                    }
+                   }
                 }
                 HStack{
                     Spacer()
@@ -51,6 +53,11 @@ struct DashboardView: View {
             .background(Color("backgroundColor"))
             .navigationDestination(isPresented: $isNewScenePresented) {
                 EditorView()
+            }
+            .onAppear {
+                if let savedSceneNames = UserDefaults.standard.array(forKey: "savedSceneNames") as? [String] {
+                    self.savedSceneNames = savedSceneNames.map { SceneModel(name: $0) }
+                }
             }
         }
     }

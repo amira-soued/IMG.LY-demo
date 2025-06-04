@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29C51C7E2DF08AF700F48871 /* IMGLYPhotoEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 29C51C7D2DF08AF700F48871 /* IMGLYPhotoEditor */; };
-		29C51C802DF08AFE00F48871 /* IMGLYDesignEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 29C51C7F2DF08AFE00F48871 /* IMGLYDesignEditor */; };
-		29C51C822DF08B0300F48871 /* IMGLYUI in Frameworks */ = {isa = PBXBuildFile; productRef = 29C51C812DF08B0300F48871 /* IMGLYUI */; };
+		29EDDCC42DF0C3A400CF217B /* IMGLYUI in Frameworks */ = {isa = PBXBuildFile; productRef = 29EDDCC32DF0C3A400CF217B /* IMGLYUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29C51C822DF08B0300F48871 /* IMGLYUI in Frameworks */,
-				29C51C802DF08AFE00F48871 /* IMGLYDesignEditor in Frameworks */,
-				29C51C7E2DF08AF700F48871 /* IMGLYPhotoEditor in Frameworks */,
+				29EDDCC42DF0C3A400CF217B /* IMGLYUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,9 +125,7 @@
 			);
 			name = "IMG.LY Demo";
 			packageProductDependencies = (
-				29C51C7D2DF08AF700F48871 /* IMGLYPhotoEditor */,
-				29C51C7F2DF08AFE00F48871 /* IMGLYDesignEditor */,
-				29C51C812DF08B0300F48871 /* IMGLYUI */,
+				29EDDCC32DF0C3A400CF217B /* IMGLYUI */,
 			);
 			productName = "IMG.LY Demo";
 			productReference = 29C51C4A2DF0651800F48871 /* IMG.LY Demo.app */;
@@ -216,7 +210,7 @@
 			mainGroup = 29C51C412DF0651800F48871;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				29C51C7B2DF08A8F00F48871 /* XCRemoteSwiftPackageReference "IMGLYUI-swift" */,
+				29EDDCB82DF0C38D00CF217B /* XCRemoteSwiftPackageReference "IMGLYUI-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 29C51C4B2DF0651800F48871 /* Products */;
@@ -422,6 +416,7 @@
 				DEVELOPMENT_TEAM = PR85U5Z2HK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "\"We need permission to save your edited images to the photo library.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -451,6 +446,7 @@
 				DEVELOPMENT_TEAM = PR85U5Z2HK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "\"We need permission to save your edited images to the photo library.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -583,30 +579,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		29C51C7B2DF08A8F00F48871 /* XCRemoteSwiftPackageReference "IMGLYUI-swift" */ = {
+		29EDDCB82DF0C38D00CF217B /* XCRemoteSwiftPackageReference "IMGLYUI-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/imgly/IMGLYUI-swift";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.52.0;
+				kind = exactVersion;
+				version = 1.51.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		29C51C7D2DF08AF700F48871 /* IMGLYPhotoEditor */ = {
+		29EDDCC32DF0C3A400CF217B /* IMGLYUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 29C51C7B2DF08A8F00F48871 /* XCRemoteSwiftPackageReference "IMGLYUI-swift" */;
-			productName = IMGLYPhotoEditor;
-		};
-		29C51C7F2DF08AFE00F48871 /* IMGLYDesignEditor */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 29C51C7B2DF08A8F00F48871 /* XCRemoteSwiftPackageReference "IMGLYUI-swift" */;
-			productName = IMGLYDesignEditor;
-		};
-		29C51C812DF08B0300F48871 /* IMGLYUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 29C51C7B2DF08A8F00F48871 /* XCRemoteSwiftPackageReference "IMGLYUI-swift" */;
+			package = 29EDDCB82DF0C38D00CF217B /* XCRemoteSwiftPackageReference "IMGLYUI-swift" */;
 			productName = IMGLYUI;
 		};
 /* End XCSwiftPackageProductDependency section */
