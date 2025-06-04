@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
+import IMGLYPhotoEditor
 import IMGLYDesignEditor
+import IMGLYEngine
 
 struct EditorView : View {
     @State var item: SceneModel?
@@ -32,6 +34,28 @@ struct EditorView : View {
                         Label("Square", systemImage: "crop")
                     }
                 }
+            }
+            // add save button
+            .imgly.dockItems { context in
+                Dock.Buttons.imagesLibrary()
+                Dock.Buttons.textLibrary()
+                Dock.Buttons.stickersLibrary()
+                Dock.Button.init(id: .init("SaveButton")) { context in
+                    Task {
+                        do {
+                            showAlert.toggle()
+                            alertTitle = "Success"
+                            alertMessage = "Great! Your work is saved"
+                        } catch {
+                            print(error)
+                        }
+                    }
+                } label: { context in
+                    Label("Save", systemImage: "externaldrive.badge.plus")
+                }
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
     }
 }

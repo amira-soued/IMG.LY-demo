@@ -20,42 +20,48 @@ struct DashboardView: View {
     
     var body: some View {
         NavigationStack{
-            ZStack{
-                VStack{
+            VStack{
+
+                if savedSceneNames.isEmpty {
+                    noScenesView
+                } else {
                     // list of saved created scenes
-                    List(savedSceneNames) { scene in
-                        
-                    }
-                    HStack{
-                        Spacer()
-                        // create new scene
-                        Button {
-                            isNewScenePresented.toggle()
-                        } label: {
-                            Text("New scene")
-                                .fontWeight(.bold)
-                                .padding()
-                                .background(Color("PrimaryButtonColor"))
-                                .foregroundStyle(Color.white)
-                                .cornerRadius(10)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color.black, lineWidth: 1)
-                                )
-                            
-                        }
-                        .padding()
-                        
-                        Spacer()
-                    }
+    //                List(savedSceneNames) { scene in
+    //
+    //                }
+                }
+                HStack{
                     Spacer()
-                    
+                    // create new scene
+                    Button {
+                        isNewScenePresented.toggle()
+                    } label: {
+                        Text("Create scene")
+                            .fontWeight(.bold)
+                            .padding()
+                            .background(Color("accentColor"))
+                            .foregroundStyle(Color.white)
+                            .cornerRadius(10)
+                    }
+                    .padding()
+                    Spacer()
+
                 }
             }
+            .background(Color("backgroundColor"))
             .navigationDestination(isPresented: $isNewScenePresented) {
                 EditorView()
             }
         }
-        
+    }
+    
+    var noScenesView: some View {
+        VStack{
+            Spacer()
+            Image(.noData)
+                .resizable()
+                .scaledToFit()
+            Spacer()
+        }
     }
 }
