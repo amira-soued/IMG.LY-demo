@@ -52,7 +52,10 @@ struct DashboardView: View {
                     
                 }
             }
-
+            .navigationDestination(isPresented: $isNewScenePresented) {
+                EditorView()
+            }
         }
+        
     }
 }
