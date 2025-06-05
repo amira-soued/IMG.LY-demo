@@ -53,6 +53,7 @@ struct EditorView : View {
                                 self.item = .init(name: itemName)
                                 try fileManagerHelper.saveScene(sceneString, itemName)
                             }
+                            presentAlert(title: "Sucess", message: "Great! Your work is saved")
                         } catch {
                             print(error)
                         }

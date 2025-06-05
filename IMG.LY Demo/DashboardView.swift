@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-private let imglyLicenseKey = "ij_CRCIwzhd9DzenrjUUn1YDwbMeAckxvjTDvrRbqHj6gelNUhvTTauAPpM2KQRk"
-
 struct SceneModel: Identifiable {
     let id = UUID()
     let name: String
@@ -38,7 +36,7 @@ struct DashboardView: View {
                     Button {
                         isNewScenePresented.toggle()
                     } label: {
-                        Text("Create scene")
+                        Text("Create new design")
                             .fontWeight(.bold)
                             .padding()
                             .background(Color("accentColor"))
